@@ -1,21 +1,25 @@
 <template>
-  <!-- TODO: Consider making this a NavIcon instead for consistent styling and behavior. -->
-  <div>
-    <img icon src="@/assets/navbar/Chat.svg" @click="goToChat()" />
+  <NavbarIcon>
+    <template #icon>
+      <img icon src="@/assets/navbar/Chat.svg" @click="goToChat()" />
+      <p id="chat-popover-anchor" class="anchor">.</p>
 
-    <p id="chat-popover-anchor" class="anchor">.</p>
-
-    <b-popover
-      :show.sync="show"
-      id="chat-container"
-      target="chat-popover-anchor"
-      triggers="click"
-      placement="topleft"
-      @shown="addChat"
-    >
-      <div ref="chatContainer"></div>
-    </b-popover>
-  </div>
+      <b-popover
+        :show.sync="show"
+        id="chat-container"
+        target="chat-popover-anchor"
+        triggers="click"
+        placement="topleft"
+        @shown="addChat"
+      >
+        <div ref="chatContainer"></div>
+      </b-popover>
+    </template>
+    <template #text>
+      {{ $t('nav-bar:chat') }}
+    </template>
+    <template> </template>
+  </NavbarIcon>
 </template>
 <script lang="ts">
   // @ts-ignore
@@ -65,9 +69,9 @@
   @import '@/styles/global.scss';
 
   img {
-    margin-top: 0.3rem;
-    width: 24px;
-    height: 24px;
+    // margin-top: 0.3rem;
+    // width: 24px;
+    // height: 24px;
     cursor: pointer;
   }
 
@@ -89,13 +93,13 @@
   }
 
   @media only screen and (max-height: 600px) {
-    #chat-container {
-      left: unset !important;
-      transform: unset !important;
-      right: 0 !important;
-      height: 100%;
-      margin: 0;
-    }
+    // #chat-container {
+    //   left: unset !important;
+    //   transform: unset !important;
+    //   right: 0 !important;
+    //   height: 100%;
+    //   margin: 0;
+    // }
   }
 </style>
 
