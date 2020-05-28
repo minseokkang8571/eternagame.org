@@ -14,12 +14,13 @@
 
 <script lang="ts">
   import { Component, Vue, Mixins, Prop } from 'vue-property-decorator';
+  import { UserData } from '@/types/common-types';
 
   @Component({
     components: {},
   })
   export default class PlayerFeaturedAchievement extends Vue {
-    @Prop() user!: object;
+    @Prop() user!: UserData;
   }
 </script>
 

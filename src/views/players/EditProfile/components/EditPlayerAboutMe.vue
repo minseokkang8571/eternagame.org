@@ -40,7 +40,7 @@
       if (text) this.$emit('set-profile', text);
     }
 
-    setSection(section: object) {
+    setSection(section: string) {
       this.$emit('set-section', section);
     }
 

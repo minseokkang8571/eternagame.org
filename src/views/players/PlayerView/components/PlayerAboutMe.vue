@@ -15,13 +15,14 @@
 
 <script lang="ts">
   import { Component, Vue, Prop } from 'vue-property-decorator';
+  import { UserData } from '@/types/common-types';
   import PlayerFeaturedAchievement from './PlayerFeaturedAchievement.vue';
-  
+
   @Component({
     components: { PlayerFeaturedAchievement },
   })
   export default class PlayerAboutMe extends Vue {
-    @Prop() user!: object;
+    @Prop() user!: UserData;
   }
 </script>
 

@@ -18,13 +18,15 @@
 <script lang="ts">
   import { Component, Vue, Prop } from 'vue-property-decorator';
 
+  import { UserData } from '@/types/common-types';
+
   @Component({
     components: {},
   })
   export default class PlayerTable extends Vue {
     @Prop() title!: String;
 
-    @Prop() entries!: object[];
+    @Prop() entries!: UserData[];
   }
 </script>
 
